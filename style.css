@@ -1,0 +1,274 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #5500aa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+
+.container{
+    padding: 20px; 
+    background: #ba0000;
+    height: 500px;
+    border-radius: 20px;
+    flex: 2;
+    margin: 10px;
+}
+
+.logMe{
+    padding: 20px;
+}
+
+.logMe form{
+    padding: 20px;
+    width: 100%;
+    display: grid;
+    row-gap: 10px;
+    backdrop-filter: blur(30px);
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.logMe form label{
+    font-size: 13px;
+    color: white;
+    font-weight: 300;
+}
+
+.logMe form input{
+    width: 100%;
+    padding: 5px;
+    background: #888;
+    outline: none;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+}
+
+.logMe form input[type="submit"]{
+    background: crimson;
+    border: none;
+    border-radius: 5px;
+    margin-top: 30px;
+    padding: 10px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.logMe form input[type="submit"]:hover{
+    background: #ff0000;
+    color: fff;
+}
+
+.logMe form input[type="submit"]:active:focus{
+    background: #00aa00;
+    color: #fff;
+}
+
+.logMe form select{
+    padding: 5px 0px;
+    outline: none;
+    background: #888;
+    color: #fff;
+}
+
+.logMe h2{
+    padding: 10px 20px;
+    font-family: serif;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    
+}
+
+footer h2{
+    font-weight: 300;
+}
+
+
+.animated{
+    padding: 20px 0px;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    background: crimson;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 200px;
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    
+}
+
+.animated span{
+    border: 1px solid #fafa00;
+    display: inline-block;
+    padding: 20px;
+    border-radius: 20px;
+    color: #fff;
+    text-shadow: 0px 1px 0px #b7b7b7, 0px 2px 0px #b7b7b7, 0px 2px 0px #b7b7b7, 0px 2px 0px #b7b7b7;
+}
+
+.animated span:nth-child(1){
+    animation: animation2 2s ease infinite;
+    background: coral;
+}
+
+.animated span:nth-child(2){
+    background: orange;
+    animation: animation2 3s ease infinite;
+}
+
+.animated span:nth-child(3){
+    background: pink;
+    animation: animation2 4s ease infinite;
+}
+
+.animated span:nth-child(4){
+    background: navy;
+    animation: animation2 5s ease infinite;  
+}
+
+.animated span:nth-child(5){
+    background: seagreen;
+    animation: animation2 6s ease infinite;
+}
+
+.birthday{
+    padding: 20px;
+    color: #fafafa;
+    font-size: 20px;
+    letter-spacing: 5px;
+}
+
+#name{
+    padding: 20px 0;
+    letter-spacing: 2px;
+    font-weight: 420;
+    text-transform: uppercase;
+}
+
+#gender, #female, #male{
+    border: 1px solid #888;
+    border-radius: 50%;
+    height: 40x;
+    width: 70px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+#gender{
+   background: #444;
+   color: #fff;
+}
+
+#female{
+    background: #fa8989;
+    padding: 15px;
+    -webkit-text-stroke: 1px #fff;
+    width: 100px;
+}
+
+#male{
+    background: #0000bb;
+    color: navy;
+    -webkit-text-stroke: 1px #fff;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.age{
+    padding: 20px;
+    background: violet;
+    position: relative;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.age::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from var(--angle), blue, green);
+    animation: animation1 1s linear infinite;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#age{
+    font-size: 20px;
+    color: transparent;
+    background: linear-gradient(to top, #faf000, #00ff89, #0000f4);
+    background-clip: text;
+    width: 200px;
+    text-align: center;
+    position: relative;
+    font-size: 40px;
+}
+
+.float{
+    padding: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.float img{
+    border: 2px solid orange;
+    border-radius: 50%;
+    transform: translateY(400px);
+    width: 100px;
+    animation: animation3 30s linear infinite;
+    animation-duration: calc(10s / var(--i));
+}
+
+
+@keyframes animation1{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+@keyframes animation2{
+    0%, 100%{
+        position: relative;
+        top: -12px;
+    }
+    50%{
+        top: 0;
+    }
+}
+
+@keyframes animation3{
+    from{
+        transform: translateY(400px);
+    }
+    to {
+        transform: translateY(-200px);
+    }
+}
